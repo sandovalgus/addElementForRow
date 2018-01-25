@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @person.name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @person.last_name %>
+</p>
+
+
+  <field>
+    <table class="table table-striped">
+      <thead>
+        <th></th>
+        <th>Producto</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+      </thead>
+      <tbody>
+        <% @person.products.each do |product| %>
+          <tr>
+          
+            <td><%= product.name %></td>
+            <td><%= product.price %></td>
+            <td><%= product.cant %></td>
+          </tr>
+        <%end%>
+      </tbody>
+    </table>
+  </field>
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>

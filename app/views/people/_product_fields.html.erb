@@ -1,0 +1,27 @@
+<fieldset class="scheduler-border-doc">
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, id: :product_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price %>
+    <%= f.text_field :price, id: :product_price %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cant %>
+    <%= f.number_field :cant, id: :product_cant %>
+  </div>
+
+    <div class="row">
+    <div class="col-md-12">
+      <%= f.hidden_field :_destroy %>
+      <%= link_to  'Eliminar Documento <i class="fa fa-times fa-1x" aria-hidden="true"></i>'.html_safe, '#', class: "remove_fields btn btn-danger" %>
+    </div>
+  </div>
+
+
+
+
+</fieldset>

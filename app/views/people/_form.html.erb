@@ -1,0 +1,42 @@
+<%= form_with(model: person, local: true) do |form| %>
+  <% if person.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(person.errors.count, "error") %> prohibited this person from being saved:</h2>
+
+      <ul>
+      <% person.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :person_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name, id: :person_last_name %>
+  </div>
+
+  <div class="field">
+    <p>Productos</p>
+    <!-- <div class="form-group "> -->
+    <%= form.fields_for :products do |product| %>
+    <%= render 'product_fields', f: product %>
+    <%end%>  
+    <div class="btn-adjunto-doc">
+    <%= link_to_add_fields 'Adjuntar Documento <i class="fa fa-paperclip fa-1x" aria-hidden="true"></i>'.html_safe, form, :products %> 
+    </div>
+    <!-- </div> -->
+</div>
+
+
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
