@@ -83,4 +83,4 @@ En **models/person** debe ir lo siguiente :
 accepts_nested_attributes_for :products,  allow_destroy: true 
   ```
 
-A tener en cuenta, el proyecto debe tener **jquery**, puede utilizar a **gena jquery-rails**. 
+A tener en cuenta, el proyecto debe tener **jquery**, puede utilizar a **gema jquery-rails**. 
