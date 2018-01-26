@@ -3,8 +3,9 @@ Para esta version de prueba se creaon dos modelos, Person y Products.
 Para hacer mas simple la comprension se define que una persona tiene muchos productos, y un producto corresponde a una sola persona.
 
 Pasos a seguir
+-------------
 
-En views/people/_form se agrego lo siguiente al formulario:
+En **views/people/_form** se agrego lo siguiente al formulario:
 
   ```
   <div class="field">
@@ -18,7 +19,7 @@ En views/people/_form se agrego lo siguiente al formulario:
 </div>
 
   ```
-En views/people se creo el archivo _product_fields.html.erb y el siguiente codigo en el:
+En **views/people** se creo el archivo _product_fields.html.erb y el siguiente codigo en el:
 
   ```
 <fieldset class="scheduler-border-doc">
@@ -43,7 +44,7 @@ En views/people se creo el archivo _product_fields.html.erb y el siguiente codig
 </fieldset>
   ```
   
-  En app/helpers/people_helper.rb se agrego el siguiente codigo:
+  En **app/helpers/people_helper.rb** se agrego el siguiente codigo:
   
   ```
   module PeopleHelper
@@ -61,7 +62,7 @@ En views/people se creo el archivo _product_fields.html.erb y el siguiente codig
 end
   ```
 
-En assets/javascripts/people.coffee se agrego el siguiene codigo :
+En **assets/javascripts/people.coffee** se agrego el siguiene codigo :
 
   ```
 jQuery ->
@@ -76,10 +77,10 @@ jQuery ->
     event.preventDefault()
   ```
 
-En models/person debe ir lo siguiente :
+En **models/person** debe ir lo siguiente :
 
   ```
 accepts_nested_attributes_for :products,  allow_destroy: true 
   ```
 
-A tener en cuenta, el proyecto debe tener jquery, puede utilizar a gena jquery-rails. 
+A tener en cuenta, el proyecto debe tener **jquery**, puede utilizar a **gena jquery-rails**. 
